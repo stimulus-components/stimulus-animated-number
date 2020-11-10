@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" />
+    <title>Stimulus Animated Number</title>
+    <script type="module" src="./src/index.js" defer></script>
+    <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js" defer></script>
+
+    <script type="module" defer>
+      import AnimatedNumber from './src/index.js'
+
+      const application = Stimulus.Application.start()
+      application.register('animated-number', AnimatedNumber)
+    </script>
+
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+      }
+
+      a {
+        color: #667eea;
+        display: inline-block;
+      }
+
+      .badges a {
+        margin: 0 0.25rem;
+      }
+
+      pre code {
+        border-radius: 0.5rem;
+        text-align: left;
+        font-family: Menlo, 'Courier New', Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full max-w-6xl mx-auto my-24 p-4">
+      <h1 class="text-center mb-8 text-5xl font-bold">Stimulus Animated Number</h1>
+
+      <p class="text-center mb-4">
+        A Stimulus controller that animates a numerical value by counting to it.
+      </p>
+
+      <p class="text-center badges">
+        <a href="https://www.npmjs.com/package/stimulus-animated-number">
+          <img src="https://img.shields.io/npm/dt/stimulus-animated-number.svg" />
+        </a>
+
+        <a href="https://www.npmjs.com/package/stimulus-animated-number">
+          <img src="https://img.shields.io/npm/v/stimulus-animated-number.svg" />
+        </a>
+
+        <a href="https://github.com/stimulus-components/stimulus-animated-number">
+          <img src="https://github.com/stimulus-components/stimulus-animated-number/workflows/Lint/badge.svg" />
+        </a>
+
+        <a href="https://github.com/stimulus-components/stimulus-animated-number">
+          <img src="https://img.shields.io/github/license/stimulus-components/stimulus-animated-number.svg" />
+        </a>
+
+        <a href="https://stimulus-animated-number.netlify.com/">
+          <img src="https://api.netlify.com/api/v1/badges/7ef669f5-d255-4a59-8461-5b2360d1674b/deploy-status" />
+        </a>
+      </p>
+
+      <h2 class="text-center text-2xl font-bold my-4">Essential links</h2>
+
+      <ul class="text-center mb-8">
+        <li>
+          <a href="https://github.com/stimulus-components/stimulus-animated-number" target="_blank" rel="noopener">
+            Github
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.npmjs.com/package/stimulus-animated-number" target="_blank" rel="noopener">
+            Npm
+          </a>
+        </li>
+      </ul>
+
+      <section class="mt-16">
+        Counting from <strong>0</strong> to <strong>100</strong> in <strong>3</strong> seconds:
+        <strong
+          data-controller="animated-number"
+          data-animated-number-start="0"
+          data-animated-number-end="100"
+          data-animated-number-duration="3000"
+          class="text-2xl"
+        ></strong>
+      </section>
+    </div>
+  </body>
+</html>
