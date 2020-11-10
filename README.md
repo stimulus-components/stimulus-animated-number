@@ -4,7 +4,7 @@
 [![](https://img.shields.io/npm/v/stimulus-animated-number.svg)](https://www.npmjs.com/package/stimulus-animated-number)
 [![](https://github.com/stimulus-components/stimulus-animated-number/workflows/Lint/badge.svg)](https://github.com/stimulus-components/stimulus-animated-number)
 [![](https://img.shields.io/github/license/stimulus-components/stimulus-animated-number.svg)](https://github.com/stimulus-components/stimulus-animated-number)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7ef669f5-d255-4a59-8461-5b2360d1674b/deploy-status)](https://stimulus-animated-number.netlify.com)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bc3d072f-f5ce-4bda-b8a7-a7f362f626db/deploy-status)](https://stimulus-animated-number.netlify.com)
 
 ## Getting started
 
