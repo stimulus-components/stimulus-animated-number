@@ -1,12 +1,21 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  connect () {
-    this.start = parseInt(this.data.get('start'), 10)
-    this.end = parseInt(this.data.get('end'), 10)
-    this.duration = parseInt(this.data.get('duration'), 10)
+  static values = {
+    start: Number,
+    end: Number,
+    duration: Number,
+    lazyThreshold: Number,
+    lazyRootMargin: String,
+    lazy: Boolean
+  }
 
-    this.data.has('lazy') ? this.lazyAnimate() : this.animate()
+  connect () {
+    this.start = this.startValue
+    this.end = this.endValue
+    this.duration = this.durationValue
+
+    this.lazyValue ? this.lazyAnimate() : this.animate()
   }
 
   animate () {
@@ -30,8 +39,8 @@ export default class extends Controller {
 
   lazyAnimate () {
     const options = {
-      threshold: this.data.get('lazyThreshold') || 0,
-      rootMargin: this.data.get('lazyRootMargin') || '0px'
+      threshold: this.lazyThresholdValue,
+      rootMargin: this.lazyRootMarginValue || '0px'
     }
 
     const observer = new IntersectionObserver((entries, observer) => {
