@@ -1,4 +1,4 @@
-import { Controller } from 'stimulus'
+import { Controller } from '@hotwired/stimulus'
 
 export default class extends Controller {
   // @ts-ignore
@@ -15,7 +15,10 @@ export default class extends Controller {
     end: Number,
     duration: Number,
     lazyThreshold: Number,
-    lazyRootMargin: String,
+    lazyRootMargin: {
+      type: String,
+      default: '0px'
+    },
     lazy: Boolean
   }
 
@@ -59,7 +62,7 @@ export default class extends Controller {
   get lazyAnimateOptions (): IntersectionObserverInit {
     return {
       threshold: this.lazyThresholdValue,
-      rootMargin: this.lazyRootMarginValue || '0px'
+      rootMargin: this.lazyRootMarginValue
     }
   }
 }

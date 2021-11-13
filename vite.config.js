@@ -7,10 +7,10 @@ module.exports = {
       name: 'stimulus-animated-number'
     },
     rollupOptions: {
-      external: ['stimulus'],
+      external: ['@hotwired/stimulus'],
       output: {
         globals: {
-          stimulus: 'Stimulus'
+          '@hotwired/stimulus': 'Stimulus'
         }
       }
     }
