@@ -1,10 +1,12 @@
-const path = require('path')
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
 
-module.exports = {
+export default defineConfig({
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'stimulus-animated-number'
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'StimulusAnimatedNumber',
+      fileName: 'stimulus-animated-number'
     },
     rollupOptions: {
       external: ['@hotwired/stimulus'],
@@ -15,4 +17,4 @@ module.exports = {
       }
     }
   }
-}
+})

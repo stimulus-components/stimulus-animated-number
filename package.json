@@ -17,7 +17,7 @@
   "homepage": "https://github.com/stimulus-components/stimulus-animated-number",
   "private": false,
   "main": "dist/stimulus-animated-number.umd.js",
-  "module": "dist/stimulus-animated-number.es.js",
+  "module": "dist/stimulus-animated-number.mjs",
   "scripts": {
     "format": "prettier-standard  '**/*.{ts,css,html}' --format",
     "lint": "prettier-standard  '**/*.{ts,css,html}' --lint",
