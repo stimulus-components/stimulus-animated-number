@@ -9,6 +9,8 @@ export default class extends Controller {
   endValue: number
   durationValue: number
   lazyValue: number
+  formatValue: string
+  formatterLocaleValue: string
 
   static values = {
     start: Number,
@@ -19,7 +21,15 @@ export default class extends Controller {
       type: String,
       default: '0px'
     },
-    lazy: Boolean
+    lazy: Boolean,
+    format: {
+      type: Boolean,
+      default: false
+    },
+    formatterLocale: {
+      type: String,
+      default: 'en-US'
+    }
   }
 
   connect (): void {
@@ -27,6 +37,8 @@ export default class extends Controller {
   }
 
   animate (): void {
+    const formatter = new Intl.NumberFormat(this.formatterLocaleValue);
+
     let startTimestamp: number = null
 
     const step = (timestamp: number) => {
@@ -34,8 +46,13 @@ export default class extends Controller {
 
       const elapsed: number = timestamp - startTimestamp
       const progress: number = Math.min(elapsed / this.durationValue, 1)
+      const elementValue: number = Math.floor(progress * (this.endValue - this.startValue) + this.startValue)
 
-      this.element.innerHTML = Math.floor(progress * (this.endValue - this.startValue) + this.startValue).toString()
+      if (this.formatValue) {
+        this.element.innerHTML = formatter.format(elementValue).toString()
+      } else {
+        this.element.innerHTML = elementValue.toString()
+      }
 
       if (progress < 1) {
         window.requestAnimationFrame(step)
