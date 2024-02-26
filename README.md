@@ -1,7 +1,7 @@
 # Stimulus Animated Number
 
-[![](https://img.shields.io/npm/dt/stimulus-animated-number.svg)](https://www.npmjs.com/package/stimulus-animated-number)
-[![](https://img.shields.io/npm/v/stimulus-animated-number.svg)](https://www.npmjs.com/package/stimulus-animated-number)
+[![](https://img.shields.io/npm/dt/@stimulus-components/animated-number.svg)](https://www.npmjs.com/package/@stimulus-components/animated-number)
+[![](https://img.shields.io/npm/v/@stimulus-components/animated-number.svg)](https://www.npmjs.com/package/@stimulus-components/animated-number)
 [![](https://github.com/stimulus-components/stimulus-animated-number/workflows/Lint/badge.svg)](https://github.com/stimulus-components/stimulus-animated-number)
 [![](https://img.shields.io/github/license/stimulus-components/stimulus-animated-number.svg)](https://github.com/stimulus-components/stimulus-animated-number)
 
