@@ -1,8 +1,6 @@
-import { Controller } from '@hotwired/stimulus'
+import { Controller } from "@hotwired/stimulus"
 
-export default class extends Controller {
-  // @ts-ignore
-  element: HTMLElement
+export default class AnimatedNumber extends Controller<HTMLElement> {
   lazyThresholdValue: number
   lazyRootMarginValue: string
   startValue: number
@@ -17,16 +15,16 @@ export default class extends Controller {
     lazyThreshold: Number,
     lazyRootMargin: {
       type: String,
-      default: '0px'
+      default: "0px",
     },
-    lazy: Boolean
+    lazy: Boolean,
   }
 
-  connect (): void {
+  connect(): void {
     this.lazyValue ? this.lazyAnimate() : this.animate()
   }
 
-  animate (): void {
+  animate(): void {
     let startTimestamp: number = null
 
     const step = (timestamp: number) => {
@@ -45,7 +43,7 @@ export default class extends Controller {
     window.requestAnimationFrame(step)
   }
 
-  lazyAnimate (): void {
+  lazyAnimate(): void {
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry: IntersectionObserverEntry) => {
         if (entry.isIntersecting) {
@@ -59,10 +57,11 @@ export default class extends Controller {
     observer.observe(this.element)
   }
 
-  get lazyAnimateOptions (): IntersectionObserverInit {
+  // eslint-disable-next-line
+  get lazyAnimateOptions(): IntersectionObserverInit {
     return {
       threshold: this.lazyThresholdValue,
-      rootMargin: this.lazyRootMarginValue
+      rootMargin: this.lazyRootMarginValue,
     }
   }
 }

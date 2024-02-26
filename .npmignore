@@ -4,7 +4,6 @@ index.html
 netlify.toml
 .node-version
 .eslintrc.js
-src
 spec
 tsconfig.json
 vite.config.js
