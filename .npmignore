@@ -6,7 +6,7 @@ netlify.toml
 .eslintrc.js
 spec
 tsconfig.json
-vite.config.js
+vite.config.mjs
 .prettierignore
 .prettierrc
 .eslintignore
